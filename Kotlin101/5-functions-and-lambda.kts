@@ -17,7 +17,7 @@ fun sum(a: Int, b: Int): Int {
 }
 
 // How do you call sum?
-
+sum(4, 1)
 
 /*: * Extension functions
     You can add functions to any Type! Careful OOP extremists!
@@ -26,13 +26,18 @@ fun Int.isEven(): Boolean {
     return this % 2 == 0
 }
 
+4.isEven()
 
 /*: * Lambda functions, Type is (arguments) -> ReturnType
    if no return is expected, we use Unit
  */
-val myFunction: () -> Unit {
 
+
+val myFunction: (Int, Boolean) -> Unit = { int, isReady ->
+    print(isReady, int)
 }
+
+
 // implicit `it` argument when there is only one argument
 // you can still name it if you want to
 val greet: (String) -> String

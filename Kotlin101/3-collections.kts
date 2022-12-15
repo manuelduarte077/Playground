@@ -4,12 +4,13 @@
 
 // Lists, we use List<Type> and the type of the collection inside the generic
 // The literal uses the listOf constructor
-val countries: List<String> = listOf("Argentina", "Brazil", "Canada", "Denmark")
+// ["Argentina" "Costa Rica"]
+val countries: List<String> = listOf("Argentina", "Brazil", "Canada", "Nicaragua")
 // countries is IMMUTABLE!
 
 // If you want a mutable List, you have to use MutableList and mutableListOf constructor
 val cities: MutableList<String> = mutableListOf("Alameda", "Buenos Aires", "Cali")
-cities.add("Dali")
+cities.add("Managua")
 
 // We also have sets and maps (dictionaries)
 // When we talk to the Android SDK sometimes we need to use Java arrays

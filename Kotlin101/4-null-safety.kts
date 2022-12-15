@@ -1,6 +1,7 @@
 /*: * Null Safety
  A String must have a string value, but a String? accepts null
 */
+
 var myName: String        // What's the value? Null? IMPOSSIBLE
 var myLastname: String?   // It can handle a null value
 

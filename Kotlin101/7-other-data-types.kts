@@ -7,7 +7,8 @@
 interface Listener {
     fun listen()
 }
-class Human: Listener {
+
+class Human : Listener {
     override fun listen() {
         print("I'm listening!")
     }
@@ -16,8 +17,9 @@ class Human: Listener {
 // OBJECTS
 object KotlinWorkshop {
     val name = "Introduction to Kotlin and Android app development"
-    val url = "https://frontendmasters.com"
+    val url = "https://getnerdify.com"
 }
+
 // Classes don't have static members, but they contain a companion object
 class User(var name: String) {
     fun print() {
@@ -44,6 +46,7 @@ sealed class Utilities {
 enum class Direction {
     NORTH, SOUTH, WEST, EAST
 }
+
 enum class Color(val rgb: Int) {
     RED(0xFF0000),
     GREEN(0x00FF00),

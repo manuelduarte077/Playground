@@ -3,7 +3,7 @@
 */
 
 // Mutable Variables use the keyword `var`
-var data = 3
+var data: Int = 3
 data = 5
 data = 7
 
@@ -31,7 +31,7 @@ if (price === aThirdPrice) {
 // Core Data Types
 val string: String
 var char: Char
-val integer: Int      // also Byte, Short, Long
+val integer: Int      // also Byte, Short, Int, Long
 val double: Double    // also Float
 val boolean: Boolean  // values are true and false
 var what: Any         // avoid Any as much as possible
@@ -39,7 +39,11 @@ var what: Any         // avoid Any as much as possible
 // String Literals, double quotes
 print("Hello World")
 // Multi-line literal strings
-
+val multiLine = """
+    {
+    "name": "Max"
+    }
+""".trimIndent()
 
 // Every string can have template expressions using $ or ${}
 // expression result will be converted to string

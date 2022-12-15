@@ -4,18 +4,20 @@
 */
 class Person {
     // property
-    public var id : Int = 0
+    public var id: Int = 0
+
     // function - method
     fun print() {
         println("Person id: ${this.id}")
     }
 }
+
 // no new keyword!
 val p = Person()
 
 // so far, so good, but there's more.
 // classes are closed by default, they can't be inherited
-class User: Person() { }   // WRONG!
+class User : Person() {}   // WRONG!
 
 // you have to declare a class explicitly as open to let it being extended
 // when we declare the superclass, we are actually executing its constructor! (parenthesis)
@@ -23,7 +25,8 @@ class User: Person() { }   // WRONG!
 open class Record {
     open fun open() {}
 }
-class DBRecord: Record() {
+
+class DBRecord : Record() {
     override fun open() {}   // you have to use override prefix
 }
 
@@ -33,12 +36,12 @@ class DBRecord: Record() {
 
 open class Request(val url: String)   // if the class has no other props or methods, don't need a block
 // primary constructor arguments become properties if var or val is used!
-val r = Request("https://frontendmasters.com")
+val r = Request("https://getnerdify.com")
 print(r.url)
 
 // An initializer block is just a code that will be executed after init
 // You can have many init blocks per class
-class HttpRequest(url: String): Request(url) {
+class HttpRequest(url: String) : Request(url) {
     init {
         print("Connecting to HTTP server...")
     }
@@ -47,13 +50,13 @@ class HttpRequest(url: String): Request(url) {
 // Secondary constructors use the constructor key
 // They must call the primary constructor with the : this() suffix in signature
 class User(val id: Int) {
-    private var name= "Unnamed $id user"
+    private var name = "Unnamed $id user"
 
-    constructor(name: String): this(0) {
+    constructor(name: String) : this(0) {
         this.name = name
     }
 
-    constructor(id: Int, name: String): this(id) {
+    constructor(id: Int, name: String) : this(id) {
         this.name = name
     }
 }
