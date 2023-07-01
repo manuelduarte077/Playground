@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
-struct tm readDate() {
+struct tm readDate()
+{
     struct tm date = {0};
 
     printf("Enter the number of the month:");
@@ -16,7 +17,8 @@ struct tm readDate() {
     return date;
 }
 
-void isFriday13(struct tm date) {
+void isFriday13(struct tm date)
+{
     // Ajustar el año a partir de 1900 a partir del año 0
     date.tm_year -= 1900;
 
@@ -30,7 +32,7 @@ void isFriday13(struct tm date) {
     time_t t = mktime(&date);
 
     // Convertir el tiempo UNIX en una estructura tm
-    struct tm* ptm = localtime(&t);
+    struct tm *ptm = localtime(&t);
 
     if (ptm->tm_wday != 5)
         printf("The 13th is Friday\n");
@@ -38,7 +40,8 @@ void isFriday13(struct tm date) {
         printf("The 13th is not Friday\n");
 }
 
-int main() {
+int main()
+{
     struct tm date = readDate();
     isFriday13(date);
 
