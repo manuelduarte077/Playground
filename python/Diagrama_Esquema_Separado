@@ -1,0 +1,20 @@
+// Diagrama de Esquema en Español
+digraph {
+	A [label="Pantalla de Introducción" fillcolor=lightgrey shape=box style=filled]
+	B [label="Registro/Iniciar Sesión" fillcolor=lightgrey shape=box style=filled]
+	C [label="Configuración de Perfil" fillcolor=lightgrey shape=box style=filled]
+	D [label="Pantalla Principal" fillcolor=lightgrey shape=box style=filled]
+	E [label="Citas Médicas" fillcolor=lightgrey shape=box style=filled]
+	F [label="Lista de Médicos" fillcolor=lightgrey shape=box style=filled]
+	G [label="Confirmación de Cita" fillcolor=lightgrey shape=box style=filled]
+	H [label=Ajustes fillcolor=lightgrey shape=box style=filled]
+	I [label=Notificaciones fillcolor=lightgrey shape=box style=filled]
+	A -> B [label="Iniciar aplicación"]
+	B -> C [label="Cuenta creada"]
+	C -> D [label="Perfil completado"]
+	D -> E [label="Ir a citas"]
+	E -> F [label="Seleccionar médico"]
+	F -> G [label="Confirmar cita"]
+	D -> H [label="Acceder a ajustes"]
+	D -> I [label="Ver notificaciones"]
+}
