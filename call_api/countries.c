@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <curl/curl.h>
+#include <stdio.h>
 /*
  * Llamar a una API es una de las tareas más comunes en programación.
  *
@@ -10,8 +10,7 @@
  * https://github.com/public-apis/public-apis
  */
 
-int main()
-{
+int main() {
   CURL *curl;
   CURLcode res;
 
@@ -20,14 +19,15 @@ int main()
   headers = curl_slist_append(headers, "Accept: application/json");
   curl = curl_easy_init();
 
-  if (curl)
-  {
+  if (curl) {
     curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
-    curl_easy_setopt(curl, CURLOPT_URL, "https://restcountries.com/v3.1/name/Nicaragua");
+    curl_easy_setopt(curl, CURLOPT_URL,
+                     "https://restcountries.com/v3.1/name/Nicaragua");
     res = curl_easy_perform(curl);
 
     if (res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
     curl_easy_cleanup(curl);
   }
   curl_slist_free_all(headers);

@@ -1,5 +1,6 @@
 import random
 
+
 def adivina_el_numero():
     # Generar un número aleatorio entre 1 y 100
     numero_a_adivinar = random.randint(1, 100)
@@ -23,5 +24,7 @@ def adivina_el_numero():
             print(f"¡Felicidades! Adivinaste el número en {intentos} intentos.")
             break
 
+
 # Ejecutar el juego
 adivina_el_numero()
+
