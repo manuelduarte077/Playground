@@ -1,3 +1,5 @@
+local love
+
 function love.load()
 	love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
 end

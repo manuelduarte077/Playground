@@ -1,7 +1,9 @@
+local lanzarDado
+
 math.randomseed(os.time()) -- Seed the random number generator with the current time
 
-function lanzar_dado()
+function lanzarDado()
 	return math.random(1, 6)
 end
 
-print("Lanzaste un dado y salió: " .. lanzar_dado())
+print("Lanzaste un dado y salió: " .. lanzarDado())
