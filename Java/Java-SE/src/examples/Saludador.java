@@ -1,4 +1,4 @@
-package saludador;
+package examples;
 
 /*
    Pide un nombre por teclado y haz que te salude
