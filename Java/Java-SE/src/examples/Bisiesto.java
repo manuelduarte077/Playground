@@ -23,6 +23,5 @@ public class Bisiesto {
         } else {
             System.out.println(year + " no es un año bisiesto.");
         }
-
     }
 }

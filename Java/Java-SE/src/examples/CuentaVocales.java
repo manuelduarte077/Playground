@@ -15,7 +15,7 @@ public class CuentaVocales {
         String frase = teclado.next();
 
         // Vocales
-        if ((frase.length()%2) == 0) {
+        if ((frase.length() % 2) == 0) {
             System.out.println(frase);
         }
     }
