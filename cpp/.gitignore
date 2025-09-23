@@ -6,3 +6,5 @@
 *.out
 *.o
 build/
+.idea
+*.log
