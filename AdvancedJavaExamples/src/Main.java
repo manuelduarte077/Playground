@@ -11,6 +11,5 @@ public class Main {
                 .reduce(0, Integer::sum); // 24 - sumar todos los elementos
 
         System.out.println("La suma de los números pares multiplicados por 2 es: " + suma);
-
     }
 }

@@ -54,27 +54,68 @@ for i in data.paragraphs:
 pen = tu.Turtle()
 screen = tu.Screen()
 
-tu.tracer(2)
+# Configuración mejorada para mejor calidad visual
+screen.bgcolor("#f8f8ff")  # Fondo blanco azulado suave
+screen.colormode(255)  # Usar valores RGB de 0-255
+tu.tracer(0)  # Desactivar animación para mejor calidad
 tu.hideturtle()
-pen.speed(10)
+pen.speed(0)  # Velocidad máxima
+pen.width(2)  # Grosor de línea más visible
+
+# Configurar ventana a pantalla completa
 screen.getcanvas().winfo_toplevel().attributes("-fullscreen", True)
+screen.title("Tulipanes para Greyvel 💜")
 
+# Dibujar un marco decorativo sutil
 pen.up()
-pen.goto(200, 450)  # Move the turtle to the center of the screen
+pen.goto(-600, -400)
 pen.down()
-pen.write("Con mucho cariño de parte de Manuel ❤️", align="center", font=("Arial", 30, "normal")   )
-
+pen.color("#e6e6fa")
+pen.width(3)
+for _ in range(4):
+    pen.forward(1200)
+    pen.left(90)
 pen.up()
-pen.goto(-450, 400)
+
+# Texto principal con fuente más elegante
+pen.up()
+pen.goto(0, 450)
 pen.down()
-pen.write("❤️", align="center", font=("Arial", 100, "normal"))
+pen.color("darkred")
+pen.write("Con mucho cariño de parte de Manuel", align="center", font=("Georgia", 28, "bold"))
+
+# Corazón grande con mejor posicionamiento
+pen.up()
+pen.goto(-500, 350)
+pen.down()
+pen.color("red")
+pen.write("❤️", align="center", font=("Arial", 120, "normal"))
+
+# Corazón adicional para balance visual
+pen.up()
+pen.goto(500, 350)
+pen.down()
+pen.write("❤️", align="center", font=("Arial", 120, "normal"))
 
 
+# Dibujar tulipanes con mejor calidad
 for i in range(len(coordinates)):
     path = coordinates[i]
     col = colour[i]
-    pen.color(col)
+    
+    # Normalizar colores RGB (0-255)
+    if len(col) >= 3:
+        r, g, b = col[0], col[1], col[2]
+        # Asegurar que los valores estén en el rango correcto
+        r = max(0, min(255, int(r)))
+        g = max(0, min(255, int(g)))
+        b = max(0, min(255, int(b)))
+        
+        pen.color(r, g, b)
+        pen.fillcolor(r, g, b)
+    
     pen.begin_fill()
+    pen.width(1)  # Líneas más finas para mejor detalle
 
     # Mover al primer punto sin dibujar
     if path:
@@ -86,9 +127,18 @@ for i in range(len(coordinates)):
         # Dibujar línea al resto de puntos
         for x, y in path[1:]:
             pen.goto(x, -y)  # Invertir Y
+        
+        # Cerrar la forma volviendo al primer punto
+        pen.goto(first_x, -first_y)
 
     pen.end_fill()
     pen.hideturtle()
 
+# Actualizar la pantalla para mostrar todo el dibujo
+tu.update()
+
 print(f"Dibujando {len(coordinates)} tulipanes...")
+print("Presiona cualquier tecla para cerrar la ventana")
+
+# Mantener la ventana abierta
 screen.mainloop()
